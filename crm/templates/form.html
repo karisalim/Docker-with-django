@@ -1,0 +1,8 @@
+{% comment %} <form action="{% url 'getform' %}" method="POST">  {% endcomment %}
+<form action="/getform/" method="POST"> 
+
+    {% csrf_token %} 
+    <p>Name: <input type="text" name="name" required></p> 
+    <p>UserID: <input type="text" name="id" required></p> 
+    <input type="submit" value="Submit"> 
+</form> 

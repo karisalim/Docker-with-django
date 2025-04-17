@@ -1,0 +1,82 @@
+{% comment %} <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Test</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>Hello, world. You're at the polls index.</h1>
+         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+         <p><b>Request Path:</b> {{ req }}</p>
+         <p><b>Request Method:</b> {{ met }}</p>
+        
+        
+        <script src="" async defer></script>
+    </body>
+</html> {% endcomment %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin: auto;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+        }
+        pre {
+            white-space: pre-wrap; /* ✅ يضمن لف النص داخل الصندوق */
+            word-wrap: break-word;
+            background-color: #f8f9fa;
+            padding: 8px;
+            border-radius: 5px;
+            text-align: left; /* ✅ محاذاة النص لليسار */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Testing Django Request Response Objects</h2>
+        {% comment %} {% for key, value in request_data.items %}
+            <p><b>{{ key }}:</b> 
+                {% if key == "HTTP Accept" %}
+                    <pre>{{ value }}</pre>  <!-- ✅ يحافظ على التنسيق -->
+                {% else %}
+                    {{ value }}
+                {% endif %}
+            </p>
+        {% endfor %} {% endcomment %}
+        {% for key, value in request_data.items %}
+            <p><b>{{ key }}:</b> {{ value }}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
